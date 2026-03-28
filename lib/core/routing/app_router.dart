@@ -6,7 +6,7 @@ class AppRouter {
   static const otp = '/OTP';
   static const main = '/main';
   static const home = '/home';
+  static const product = '/product';
   static const categor = '/categor';
   static const sub = '/sub';
-  
 }

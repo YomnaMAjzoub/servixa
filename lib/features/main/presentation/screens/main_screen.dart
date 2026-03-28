@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:servixass/core/constants/app_colors.dart';
@@ -133,14 +134,14 @@ class _MainScreenState extends State<MainScreen> {
               children: [
                 navItem(
                   0,
-                  "Home",
+                  "home".tr(),
                   "assets/icons/home.svg",
                   "assets/icons/home2.svg",
                 ),
 
                 navItem(
                   1,
-                  "notifications",
+                  "notify".tr(),
                   "assets/icons/notify.svg",
                   "assets/icons/notify2.svg",
                 ),
@@ -149,14 +150,14 @@ class _MainScreenState extends State<MainScreen> {
 
                 navItem(
                   2,
-                  "My Ads",
+                  "ads".tr(),
                   "assets/icons/ads.svg",
                   "assets/icons/ads2.svg",
                 ),
 
                 navItem(
                   3,
-                  "Orders",
+                  "orders".tr(),
                   "assets/icons/orders.svg",
                   "assets/icons/orders2.svg",
                 ),

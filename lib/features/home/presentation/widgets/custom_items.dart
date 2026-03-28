@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:servixass/core/constants/app_colors.dart';
-
+import 'package:servixass/core/routing/app_router.dart';
 
 class CustomItem extends StatelessWidget {
   const CustomItem({
@@ -21,97 +22,105 @@ class CustomItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppColors.grey50),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-
-          ClipRRect(
-            borderRadius: const BorderRadius.vertical(
-              top: Radius.circular(8),
-            ),
-            child: Image.asset(
-              image,
-              width: double.infinity,
-              height: 126,
-              fit: BoxFit.cover,
-            ),
-          ),
-
-          /// DETAILS
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(4),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  /// TITLE
-                  Text(
-                    title,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.black
-                    ),
-                  ),
-
-                 // const SizedBox(height:4),
-
-                  /// LOCATION
-                  Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/icons/location_icon.svg',
-                        width: 10,
-                        height: 12,
-                      ),
-                      const SizedBox(width:3),
-                      Expanded(
-                        child: Text(
-                          location,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.grey300,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                 // SizedBox(height:4),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '$price SAK',
-                        style: const TextStyle(
-                          color: AppColors.main500,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                        ),
-                      ),
-                     IconButton(onPressed:(){}, icon:Icon(Icons.favorite_border, size: 20,
-                        color: AppColors.black,)),
-                    ],
-                  ),
-                ],
+    return InkWell(
+      onTap: () {
+        Get.toNamed(AppRouter.product);
+      },
+      child: Container(
+        width: width,
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: AppColors.grey50),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(8),
+              ),
+              child: Image.asset(
+                image,
+                width: double.infinity,
+                height: 126,
+                fit: BoxFit.cover,
               ),
             ),
-          ),
-        ],
+
+            /// DETAILS
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(4),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    /// TITLE
+                    Text(
+                      title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.black,
+                      ),
+                    ),
+
+                    // const SizedBox(height:4),
+
+                    /// LOCATION
+                    Row(
+                      children: [
+                        SvgPicture.asset(
+                          'assets/icons/location_icon.svg',
+                          width: 10,
+                          height: 12,
+                        ),
+                        const SizedBox(width: 3),
+                        Expanded(
+                          child: Text(
+                            location,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.grey300,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // SizedBox(height:4),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '$price SAK',
+                          style: const TextStyle(
+                            color: AppColors.main500,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.favorite_border,
+                            size: 20,
+                            color: AppColors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
