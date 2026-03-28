@@ -1,0 +1,190 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:servixass/core/constants/app_colors.dart';
+import 'package:servixass/features/home/presentation/screens/home_screen.dart';
+import 'package:servixass/features/main/presentation/widgets/nav_bar_painter.dart';
+
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+
+  double getSelectorPosition(BuildContext context) {
+  double width = MediaQuery.of(context).size.width;
+
+  /// لدينا 5 خانات (4 أيقونات + فراغ FAB)
+  double itemWidth = width / 5;
+
+  num positionIndex =
+      selectedIndex < 2 ? selectedIndex : selectedIndex + 1;
+
+  return itemWidth * positionIndex + (itemWidth / 2) - 26.36;
+}
+
+  int selectedIndex = 0;
+
+  final pages = [
+    const Home(),
+    const Home(),
+    const Home(),
+    const Home(),
+  ];
+
+  void changeTab(int index){
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
+  Widget navItem(
+  int index,
+  String label,
+  String icon,
+  String selectedIcon,
+){
+  final selected = index == selectedIndex;
+
+  return Expanded(
+  
+    child: GestureDetector(
+      onTap: ()=>changeTab(index),
+      child: Column(
+       
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+
+          SvgPicture.asset(
+            selected ? selectedIcon : icon,
+            width:24.81,
+            height:24,
+          ),
+
+          const SizedBox(height:4),
+
+          Text(
+            label,
+            style: TextStyle(
+              fontSize:12,
+              fontWeight: FontWeight.w400,
+              color: selected
+                  ? AppColors.main500
+                  : AppColors.grey200,
+            ),
+          )
+        ],
+      ),
+    ),
+  );
+}
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+   backgroundColor: const Color(0xFFF7F7F7),
+      extendBody: true,
+      body: pages[selectedIndex],
+
+      floatingActionButtonLocation:
+      FloatingActionButtonLocation.centerDocked,
+
+      floatingActionButton: Container(
+  height: 64.09,
+  width: 62.01,
+  decoration: BoxDecoration(
+    shape: BoxShape.circle,
+    color: AppColors.main500,
+    boxShadow: [
+      BoxShadow(
+        color:AppColors.black.withValues(alpha: .25),
+        blurRadius: 7,
+        spreadRadius:0 ,
+        offset: const Offset(0,-1),
+      )
+    ],
+  ),
+        child: Center(
+          child: SvgPicture.asset(
+            "assets/icons/add.svg",
+            width:16.63,
+            height: 16.63,
+            fit: BoxFit.none,
+            
+          ),
+        ),
+      ),
+      bottomNavigationBar: SizedBox(
+        height:69.22,
+        child: Stack(
+          children: [
+
+            /// background shape
+            CustomPaint(
+           size: const Size(double.infinity, 69.22),
+                  painter: NavBarPainter(
+                  fabRadius:37.78,    
+  ),
+),
+
+AnimatedPositioned(
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeOut,
+      top: 0,
+      left: getSelectorPosition(context),
+      child: Container(
+        width: 52.72,
+        height: 5,
+        decoration: BoxDecoration(
+          color: AppColors.main500,
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(18),bottomRight: Radius.circular(18)),
+        ),
+      ),
+    ),
+
+            /// items
+            Row(
+             
+              children: [
+
+                navItem(
+                  0,
+                  "Home",
+                  "assets/icons/home.svg",
+                  "assets/icons/home2.svg"
+                ),
+
+                navItem(
+                  1,
+                  "Chat",
+                  "assets/icons/notify.svg",
+                  "assets/icons/notify2.svg"
+                ),
+
+               Spacer(),
+
+                navItem(
+                  2,
+                  "My Ads",
+                  "assets/icons/ads.svg",
+                  "assets/icons/ads2.svg"
+                ),
+
+                navItem(
+                  3,
+                  "Orders",
+                  "assets/icons/orders.svg",
+                  "assets/icons/orders2.svg"
+                ),
+
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,12 @@
+class AppRouter {
+  static const splash = '/';
+  static const onboarding = '/onboarding';
+  static const login = '/login';
+  static const register = '/register';
+  static const otp = '/OTP';
+  static const main = '/main';
+  static const home = '/home';
+  static const categor = '/categor';
+  static const sub = '/sub';
+  
+}
