@@ -15,12 +15,14 @@ class CustomFormField extends StatelessWidget {
     required this.enabled,
    required this.obscuretext,
     this.suffix,
+    this.maxLines,
     super.key,
   });
   final double width;
   final double height;
   final TextInputType keyboard;
   final TextInputAction inputAction;
+  final int? maxLines;
   final Widget? prefix;
   final String hint;
   final Widget? label;
@@ -39,6 +41,7 @@ class CustomFormField extends StatelessWidget {
         keyboardType: keyboard,
         textInputAction: inputAction,
         obscureText:obscuretext,
+        maxLines:maxLines,
         decoration: InputDecoration(
           border: border,
           focusedBorder: focused,

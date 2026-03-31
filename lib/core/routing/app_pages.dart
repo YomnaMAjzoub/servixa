@@ -6,7 +6,7 @@ import 'package:servixass/features/auth/presentation/register_screen.dart';
 import 'package:servixass/features/home/presentation/screens/categories_screen.dart';
 import 'package:servixass/features/home/presentation/screens/home_screen.dart';
 import 'package:servixass/features/main/presentation/screens/main_screen.dart';
-import 'package:servixass/features/product/presentation/widgets/details_screen.dart';
+import 'package:servixass/features/product/presentation/screens/details_screen.dart';
 import 'package:servixass/features/startup/presentation/screens/onboarding_screens.dart';
 import 'package:servixass/features/startup/presentation/screens/splash_screen.dart';
 
