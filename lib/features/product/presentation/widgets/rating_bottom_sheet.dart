@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:servixass/core/constants/app_colors.dart';
 
-class ShareBottomSheet extends StatelessWidget {
-  const ShareBottomSheet({super.key});
+class RatingBottomSheet extends StatelessWidget {
+  const RatingBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -141,17 +141,23 @@ class ShareBottomSheet extends StatelessWidget {
                 height: 48,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:AppColors.white, 
-                    shape:
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                        side: BorderSide(width: 1, color: AppColors.main500),
-                      ),
+                    backgroundColor: AppColors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      side: BorderSide(width: 1, color: AppColors.main500),
+                    ),
                   ),
                   onPressed: () {
                     Get.back();
                   },
-                  child:Text('Cancel',style: GoogleFonts.roboto(fontSize: 14, fontWeight: FontWeight.w500,color: AppColors.main500)),
+                  child: Text(
+                    'Cancel',
+                    style: GoogleFonts.roboto(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.main500,
+                    ),
+                  ),
                 ),
               ),
               SizedBox(
@@ -159,29 +165,36 @@ class ShareBottomSheet extends StatelessWidget {
                 height: 48,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:AppColors.main500, 
-                    shape:
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                        side: BorderSide(width: 1, color: AppColors.main500),
-                      ),
+                    backgroundColor: AppColors.main500,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      side: BorderSide(width: 1, color: AppColors.main500),
+                    ),
                   ),
                   onPressed: () {
-                  //  not finished yet
-                   Get.back();
-                   Get.snackbar('Thank you for your feedback', 'Your feedback has been submitted successfully.',
-                    backgroundColor: AppColors.main500,
-                    colorText: AppColors.white,
-                    snackPosition: SnackPosition.BOTTOM,
-                    duration: Duration(seconds: 3),
-                   );
+                    //  not finished yet
+                    Get.back();
+                    Get.snackbar(
+                      'Thank you for your feedback',
+                      'Your feedback has been submitted successfully.',
+                      backgroundColor: AppColors.main500,
+                      colorText: AppColors.white,
+                      snackPosition: SnackPosition.BOTTOM,
+                      duration: Duration(seconds: 3),
+                    );
                   },
-                  child:Text('Submit',style: GoogleFonts.roboto(fontSize: 14, fontWeight: FontWeight.w500,color: AppColors.yellow)),
+                  child: Text(
+                    'Submit',
+                    style: GoogleFonts.roboto(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.yellow,
+                    ),
+                  ),
                 ),
               ),
             ],
           ),
-          
         ],
       ),
     );

@@ -27,7 +27,7 @@ class LocationSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SvgPicture.asset('assets/icons/location_icon.svg',width:12.5,height:15,fit: BoxFit.none),
-              Text('location',style: GoogleFonts.roboto(
+              Text('742 Evergreen Terrace, Springfield',style: GoogleFonts.roboto(
                 fontSize: 14,
                 color: AppColors.grey300,
                 fontWeight: FontWeight.w400,

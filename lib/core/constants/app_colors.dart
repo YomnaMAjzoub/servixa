@@ -13,11 +13,7 @@ class AppColors {
   static const Color main900 = Color(0xff2d184b);
   static const Color white   = Color(0xffFFFFFF);
   static const Color yellow =  Color(0xffFEFAED);
-  static const Color shadow1 = Color(0xff9D6AE6);
-  static const Color shadow2 = Color(0xff6133A2);
-  static const Color shadow3 = Color(0xffD9BEFF);
-
-
+  
   static const Color grey50 =  Color(0xffebebeb);
   static const Color grey100 = Color(0xffc0c0c0);
   static const Color grey200 = Color(0xffa1a1a1);
@@ -30,4 +26,15 @@ class AppColors {
   static const Color grey900 = Color(0xff151515);
   static const Color black =   Color(0xff000000);
   static const Color main =    Color(0xff010A1C);
+
+ 
+//shadow colors
+  static const Color shadowb =     Color(0xffD9DDE5);
+  static const Color shadowb1 =     Color(0xffB0B0B0);
+  static const Color shadow1 = Color(0xff9D6AE6);
+  static const Color shadow2 = Color(0xff6133A2);
+  static const Color shadow3 = Color(0xffD9BEFF);
+
+
+
 }

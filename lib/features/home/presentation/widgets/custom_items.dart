@@ -29,9 +29,17 @@ class CustomItem extends StatelessWidget {
       child: Container(
         width: width,
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color:AppColors.shadowb,
+              blurRadius: 7,
+              offset: Offset(1, 1),
+              
+            )
+          ],
           color: AppColors.white,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: AppColors.grey50),
+          border: Border.all(color: AppColors.grey50,width: 1.5),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

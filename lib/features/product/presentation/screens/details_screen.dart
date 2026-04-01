@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:servixass/core/constants/app_colors.dart';
+import 'package:servixass/features/product/presentation/widgets/bottom_bar.dart';
 import 'package:servixass/features/product/presentation/widgets/description_section.dart';
 import 'package:servixass/features/product/presentation/widgets/features_section.dart';
 import 'package:servixass/features/product/presentation/widgets/location_section.dart';
@@ -14,6 +15,7 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomBar(),
       backgroundColor: AppColors.grey50,
       body: CustomScrollView(
         scrollDirection: Axis.vertical,
@@ -21,8 +23,8 @@ class DetailsScreen extends StatelessWidget {
         slivers: [
           SliverAppBar(
             expandedHeight: MediaQuery.of(context).size.height * 0.33,
-          
-           pinned: true,
+           floating: true,
+          // pinned: true,
             backgroundColor: AppColors.white,
             actions: [
                IconButton(
@@ -59,8 +61,8 @@ class DetailsScreen extends StatelessWidget {
                       boxShadow: [
                         BoxShadow(
                           blurRadius: 7,
-                          offset: Offset(0, 1),
-                          color: AppColors.black.withValues(alpha: .25),
+                          offset: Offset(1, 1),
+                          color: AppColors.shadowb,
                         ),
                       ],
                       image: DecorationImage(
