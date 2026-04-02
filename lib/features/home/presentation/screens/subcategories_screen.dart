@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart'hide Trans;
 import 'package:servixass/common/widgets/gradient.dart';
 import 'package:servixass/common/widgets/search_field.dart';
@@ -10,11 +10,13 @@ import 'package:servixass/features/home/presentation/widgets/categories_grid.dar
 
 class SubCategoryScreen extends StatelessWidget {
   SubCategoryScreen({super.key});
-  final names = ['Equipment', 'Construction', 'Maintenance'];
+
+  final names = ['Heavy Vehicles', 'Logistics', 'Interior Design'];
+
   final icons = [
-    'assets/icons/equipment.svg',
-    'assets/icons/construction.svg',
-    'assets/icons/maintenance.svg',
+    'assets/icons/heavy.svg',
+    'assets/icons/logistic.svg',
+    'assets/icons/interiorDesign.svg',
   ];
 
   @override
@@ -35,7 +37,7 @@ class SubCategoryScreen extends StatelessWidget {
                     alignment: AlignmentGeometry.topLeft,
                     child: IconButton(
                       onPressed: () {
-                        Get.offNamed(AppRouter.home);
+                        Get.off(AppRouter.categor);
                       },
                       icon: const Icon(
                         Icons.arrow_back,
@@ -53,19 +55,19 @@ class SubCategoryScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        'category1'.tr(),
-                        style: const TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.grey700,
-                        ),
-                      ),
-                      Text(
-                        'category2'.tr(),
+                        'sub1'.tr(),
                         style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.w500,
                           color: AppColors.main500,
+                        ),
+                      ),
+                      Text(
+                        'sub2'.tr(),
+                        style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.grey700,
                         ),
                       ),
                     ],
@@ -97,7 +99,6 @@ class SubCategoryScreen extends StatelessWidget {
 
                 const SliverToBoxAdapter(child: SizedBox(height: 24)),
 
-                /// categories grid
                 CategoriesGrid(names: names, icons: icons),
               ],
             ),

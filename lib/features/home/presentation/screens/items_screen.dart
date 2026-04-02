@@ -1,21 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart'hide Trans;
+import 'package:google_fonts/google_fonts.dart';
 import 'package:servixass/common/widgets/gradient.dart';
 import 'package:servixass/common/widgets/search_field.dart';
 import 'package:servixass/core/constants/app_colors.dart';
 import 'package:servixass/core/routing/app_router.dart';
-import 'package:servixass/features/home/presentation/widgets/categories_grid.dart';
+import 'package:servixass/features/home/presentation/widgets/items_grid.dart';
 
-class SubCategoryScreen extends StatelessWidget {
-  SubCategoryScreen({super.key});
-  final names = ['Equipment', 'Construction', 'Maintenance'];
-  final icons = [
-    'assets/icons/equipment.svg',
-    'assets/icons/construction.svg',
-    'assets/icons/maintenance.svg',
-  ];
+class ItemsScreen extends StatelessWidget {
+  const ItemsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,19 +45,20 @@ class SubCategoryScreen extends StatelessWidget {
 
                 /// title
                 SliverToBoxAdapter(
-                  child: Row(
+                  child:Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'category1'.tr(),
-                        style: const TextStyle(
+                        'Top Construction Services in ',
+                        style: GoogleFonts.roboto(
                           fontSize: 22,
                           fontWeight: FontWeight.w500,
                           color: AppColors.grey700,
                         ),
                       ),
                       Text(
-                        'category2'.tr(),
-                        style: const TextStyle(
+                        'your location',
+                        style:  GoogleFonts.roboto(
                           fontSize: 22,
                           fontWeight: FontWeight.w500,
                           color: AppColors.main500,
@@ -76,29 +72,34 @@ class SubCategoryScreen extends StatelessWidget {
 
                 /// search
                 SliverToBoxAdapter(
-                  child: SearchField(
-                    hint: 'search'.tr(),
-                    prefix: SvgPicture.asset(
-                      'assets/icons/search_icon.svg',
-                      width: 16,
-                      height: 16,
-                      fit: BoxFit.none,
-                    ),
-                    suffix: SvgPicture.asset(
-                      'assets/icons/filter_icon.svg',
-                      width: 20,
-                      height: 20,
-                      fit: BoxFit.none,
-                    ),
-                    width: MediaQuery.of(context).size.width * 0.91,
-                    height: 48,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SearchField(
+                        hint: 'search'.tr(),
+                        prefix: SvgPicture.asset(
+                          'assets/icons/search_icon.svg',
+                          width: 16,
+                          height: 16,
+                          fit: BoxFit.none,
+                        ),
+                        suffix: SvgPicture.asset(
+                          'assets/icons/filter_icon.svg',
+                          width: 20,
+                          height: 20,
+                          fit: BoxFit.none,
+                        ),
+                        width: MediaQuery.of(context).size.width * 0.80,
+                        height: 48,
+                      ),
+                      IconButton(onPressed:(){}, icon:SvgPicture.asset('assets/icons/filterS.svg',width:23.83,height:23.83,fit: BoxFit.none)),
+                    ],
                   ),
                 ),
 
-                const SliverToBoxAdapter(child: SizedBox(height: 24)),
+                const SliverToBoxAdapter(child: SizedBox(height:24)),
 
-                /// categories grid
-                CategoriesGrid(names: names, icons: icons),
+                ItemsGrid(image:'assets/images/item.png', title:'Riyadh – Malaz', location:'Riyadh – Malaz', price: 500)
               ],
             ),
           ),
@@ -107,3 +108,5 @@ class SubCategoryScreen extends StatelessWidget {
     );
   }
 }
+
+ 

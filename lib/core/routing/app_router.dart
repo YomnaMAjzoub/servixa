@@ -9,4 +9,5 @@ class AppRouter {
   static const product = '/product';
   static const categor = '/categor';
   static const sub = '/sub';
+  static const items = '/items';
 }

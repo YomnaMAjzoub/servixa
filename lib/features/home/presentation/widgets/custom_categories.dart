@@ -5,15 +5,15 @@ import 'package:servixass/core/constants/app_colors.dart';
 
 
 class CustomCategories extends StatelessWidget {
-  const CustomCategories({super.key, required this.name, required this.image});
+  const CustomCategories({super.key, required this.name, required this.image,this.onTap});
   final String name;
   final String image;
+    final VoidCallback? onTap;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-       // moving
-      },
+      onTap:onTap,
       child: Container(
         width: 120,
         height: 84,
@@ -30,6 +30,7 @@ class CustomCategories extends StatelessWidget {
             Text(
               name,
               style: TextStyle(
+                overflow:TextOverflow.ellipsis,
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
                 color: AppColors.grey600,

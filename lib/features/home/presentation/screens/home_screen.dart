@@ -105,6 +105,9 @@ class Home extends StatelessWidget {
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return CustomCategories(
+                        onTap: () {
+                          Get.toNamed(AppRouter.sub);
+                        },
                         name: 'Equipment',
                         image: 'assets/icons/equipment.svg',
                       );
@@ -128,7 +131,9 @@ class Home extends StatelessWidget {
                     ),
                     Spacer(),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(AppRouter.items);
+                      },
                       child: Text(
                         'show'.tr(),
                         style: TextStyle(

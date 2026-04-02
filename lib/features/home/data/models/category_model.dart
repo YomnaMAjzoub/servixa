@@ -1,13 +1,11 @@
-import 'package:servixass/features/home/data/models/subcategory_model.dart';
 
 class CategoryModel {
   String name;
-  String image;
-  SubcategoryModel? subCategory;
+  String icon;
+  
 
   CategoryModel({
     required this.name,
-     required this.image,
-     this.subCategory
+     required this.icon,
     });
 }
