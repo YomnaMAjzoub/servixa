@@ -1,17 +1,73 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:servixass/core/constants/app_colors.dart';
+import 'package:servixass/features/location_map/data/models/location_model.dart';
+import 'package:servixass/features/product/data/models/rating_model.dart';
+import 'package:servixass/features/product/data/models/review_model.dart';
 import 'package:servixass/features/product/presentation/widgets/bottom_bar.dart';
+import 'package:servixass/features/product/presentation/widgets/contact_section.dart';
 import 'package:servixass/features/product/presentation/widgets/description_section.dart';
 import 'package:servixass/features/product/presentation/widgets/features_section.dart';
 import 'package:servixass/features/product/presentation/widgets/location_section.dart';
 import 'package:servixass/features/product/presentation/widgets/price_section.dart';
 import 'package:servixass/features/product/presentation/widgets/reviews_section.dart';
+import 'package:servixass/features/product/presentation/widgets/top_reviews_section.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key});
+class DetailsScreen extends StatefulWidget {
+const DetailsScreen({super.key});
+
+  @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
   final int activeIndex = 0;
+
+  final List<String> images = [
+    'assets/images/item.png',
+    'https://i.pravatar.cc/400?img=1',
+    'https://i.pravatar.cc/400?img=2',
+    'https://i.pravatar.cc/400?img=3',
+  ];
+
+  final ratingData = RatingSummary(
+  average: 4.0,
+  totalReviews: 345,
+  distribution: {
+    5: 0.33,
+    4: 0.48,
+    3: 0.28,
+    2: 0.12,
+    1: 0.10,
+  },
+);
+
+LocationModel locationData = LocationModel(
+  lat: 37.7749,
+  lng: -122.4194,
+  address: "742 Evergreen Terrace, Springfield",
+);
+
+List<ReviewModel> reviews = [
+  ReviewModel(
+    name: "lilia sallem",
+    image: "https://i.pravatar.cc/150?img=1",
+    date: "6/15/2025",
+    rating: 4,
+    review:
+        "Great product! Works as expected, easy to use, and feels high-quality. Just wish the battery lasted a bit longer.",
+  ),
+  ReviewModel(
+    name: "lilia sallem",
+    image: "https://i.pravatar.cc/150?img=2",
+    date: "6/15/2025",
+    rating: 4,
+    review:
+        "Great product! Works as expected, easy to use, and feels high-quality. Just wish the battery lasted a bit longer.",
+  ),
+];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,7 +165,9 @@ class DetailsScreen extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: ReviewsSection(),
-          )
+          ),
+          SliverToBoxAdapter(child:ContactSection(rating:ratingData),),
+          SliverToBoxAdapter(child: TopReviewsSection(reviews: reviews),),
         ],
       ),
     );

@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:servixass/core/constants/app_colors.dart';
 
 class SearchField extends StatelessWidget {
-  const SearchField({
+ const SearchField({
     required this.hint,
     required this.prefix,
     required this.suffix,
     required this.width,
     required this.height,
+    this.onTap,
     super.key,
   });
   final double width;
@@ -15,12 +16,15 @@ class SearchField extends StatelessWidget {
   final String hint;
   final Widget prefix;
   final Widget suffix;
+ final void Function()? onTap;
+  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width:width,
       height: height,
       child: TextFormField(
+        onTap:onTap ,
         decoration: InputDecoration(
           prefixIcon: prefix,
           suffixIcon: suffix,

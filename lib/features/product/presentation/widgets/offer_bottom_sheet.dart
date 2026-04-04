@@ -21,8 +21,7 @@ class OfferBottomSheet extends StatelessWidget {
           topRight: Radius.circular(25.0),
         ),
       ),
-      child: SingleChildScrollView(
-        child: Column(
+      child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -110,93 +109,98 @@ class OfferBottomSheet extends StatelessWidget {
              SizedBox(height:24),
              Text('Details',style: GoogleFonts.roboto(fontSize:16, fontWeight: FontWeight.w500,color: AppColors.grey600)),
               SizedBox(height:12),
-              CustomFormField(width:MediaQuery.of(context).size.width*0.9, 
-             height:MediaQuery.of(context).size.height*0.22,
-              hint:'Enter Details',
-              maxLines:4,
-               inputAction:TextInputAction.newline,
-                keyboard: TextInputType.multiline,
-              prefixConstraints: BoxConstraints(maxHeight:18,maxWidth: 18),
-             // contentpadding: EdgeInsets.all(12),
-              prefix:Icon(Icons.chat_outlined,color: AppColors.main500,size:25,opticalSize:16 ),
-                 border:OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: AppColors.grey100, ),
-             ), 
-             focused:OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: AppColors.main500, ),
-             ), enabled: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: BorderSide(color: AppColors.grey100, ),
-             ), 
-             obscuretext:false),
-           // SizedBox(height:12),
-            Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.43,
-                height: 48,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      side: BorderSide(width: 1, color: AppColors.main500),
-                    ),
-                  ),
-                  onPressed: () {
-                    Get.back();
-                  },
-                  child: Text(
-                    'Cancel',
-                    style: GoogleFonts.roboto(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.main500,
-                    ),
-                  ),
-                ),
+              Expanded(
+                child:CustomFormField(width:MediaQuery.of(context).size.width*0.9, 
+                 height:MediaQuery.of(context).size.height*0.22,
+                hint:'Enter Details',
+                maxLines:4,
+                 inputAction:TextInputAction.newline,
+                  keyboard: TextInputType.multiline,
+                prefixConstraints: BoxConstraints(maxHeight:18,maxWidth: 18),
+                             // contentpadding: EdgeInsets.all(12),
+                prefix:Icon(Icons.chat_outlined,color: AppColors.main500,size:25,opticalSize:16 ),
+                   border:OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(color: AppColors.grey100, ),
+                             ), 
+                             focused:OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(color: AppColors.main500, ),
+                             ), enabled: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(color: AppColors.grey100, ),
+                             ), 
+                             obscuretext:false),
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.43,
-                height: 48,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.main500,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      side: BorderSide(width: 1, color: AppColors.main500),
+            SizedBox(height:24),
+            Expanded(
+              child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.43,
+                  height: 48,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        side: BorderSide(width: 1, color: AppColors.main500),
+                      ),
                     ),
-                  ),
-                  onPressed: () {
-                    //  not finished yet
-                    Get.back();
-                    Get.snackbar(
-                      'you request done',
-                      'waiting for it',
-                      backgroundColor: AppColors.main500,
-                      colorText: AppColors.white,
-                      snackPosition: SnackPosition.BOTTOM,
-                      duration: Duration(seconds: 3),
-                    );
-                  },
-                  child: Text(
-                    'Submit',
-                    style: GoogleFonts.roboto(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.yellow,
+                    onPressed: () {
+                      Get.back();
+                    },
+                    child: Text(
+                      'Cancel',
+                      style: GoogleFonts.roboto(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.main500,
+                      ),
                     ),
                   ),
                 ),
-              ), 
-            ],
-          ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.43,
+                  height: 48,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.main500,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        side: BorderSide(width: 1, color: AppColors.main500),
+                      ),
+                    ),
+                    onPressed: () {
+                      //  not finished yet
+                      Get.back();
+              
+                      Get.snackbar(
+                        'you request done',
+                        'waiting for it',
+                        backgroundColor: AppColors.main500,
+                        colorText: AppColors.white,
+                        snackPosition: SnackPosition.BOTTOM,
+                        duration: Duration(seconds: 3),
+                      );
+                    },
+                    child: Text(
+                      'Submit',
+                      style: GoogleFonts.roboto(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.yellow,
+                      ),
+                    ),
+                  ),
+                ), 
+              ],
+                        ),
+            ),
           ],
         ),
-      ),
+      
     );
   }
 }

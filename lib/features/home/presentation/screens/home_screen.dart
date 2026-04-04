@@ -2,12 +2,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:servixass/common/widgets/custom_profile_info.dart';
+import 'package:servixass/features/home/presentation/widgets/custom_profile_info.dart';
+
 import 'package:servixass/common/widgets/gradient.dart';
 import 'package:servixass/common/widgets/search_field.dart';
 import 'package:servixass/core/constants/app_colors.dart';
 import 'package:servixass/core/routing/app_router.dart';
-import 'package:servixass/features/home/presentation/widgets/custom_categories.dart';
+import 'package:servixass/features/categories_sub/presentation/widgets/custom_categories.dart';
 import 'package:servixass/features/home/presentation/widgets/custom_items.dart';
 import 'package:servixass/features/home/presentation/widgets/slider.dart';
 
@@ -51,6 +52,9 @@ class Home extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 SearchField(
+                  onTap: () {
+                    Get.toNamed(AppRouter.search);
+                  },
                   hint: 'search'.tr(),
                   prefix: SvgPicture.asset(
                     'assets/icons/search_icon.svg',

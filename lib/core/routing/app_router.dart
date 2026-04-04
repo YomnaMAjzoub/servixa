@@ -10,4 +10,5 @@ class AppRouter {
   static const categor = '/categor';
   static const sub = '/sub';
   static const items = '/items';
+  static const search = '/search';
 }

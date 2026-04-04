@@ -16,7 +16,7 @@ class RatingBottomSheet extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       padding: const EdgeInsets.all(16.0),
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(25.0),
           topRight: Radius.circular(25.0),
@@ -90,44 +90,46 @@ class RatingBottomSheet extends StatelessWidget {
             ),
           ),
           SizedBox(height: 24),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.89,
-            height: MediaQuery.of(context).size.height * 0.14,
-            child: TextFormField(
-              maxLines: 10,
-              // maxLength: 50,
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(
-                hintText: ' Share your Thought...',
-                hintStyle: GoogleFonts.roboto(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.grey200,
-                ),
-
-                //contentPadding: EdgeInsets.all(16),
-                //alignLabelWithHint: true,
-                prefixIconConstraints: BoxConstraints(
-                  minHeight: 24,
-                  minWidth: 19,
-                ),
-                prefix: SvgPicture.asset(
-                  'assets/icons/field.svg',
-                  width: 24,
-                  height: 19,
-                  fit: BoxFit.none,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
-                  borderSide: BorderSide(width: 1, color: AppColors.grey200),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
-                  borderSide: BorderSide(width: 1, color: AppColors.grey200),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
-                  borderSide: BorderSide(width: 1, color: AppColors.grey200),
+          Expanded(
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width * 0.89,
+              height: MediaQuery.of(context).size.height * 0.14,
+              child: TextFormField(
+                maxLines: 10,
+                // maxLength: 50,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  hintText: ' Share your Thought...',
+                  hintStyle: GoogleFonts.roboto(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.grey200,
+                  ),
+            
+                  //contentPadding: EdgeInsets.all(16),
+                  //alignLabelWithHint: true,
+                  prefixIconConstraints: BoxConstraints(
+                    minHeight: 24,
+                    minWidth: 19,
+                  ),
+                  prefix: SvgPicture.asset(
+                    'assets/icons/field.svg',
+                    width: 24,
+                    height: 19,
+                    fit: BoxFit.none,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                    borderSide: BorderSide(width: 1, color: AppColors.grey200),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                    borderSide: BorderSide(width: 1, color: AppColors.grey200),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                    borderSide: BorderSide(width: 1, color: AppColors.grey200),
+                  ),
                 ),
               ),
             ),

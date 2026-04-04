@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:servixass/core/constants/app_colors.dart';
 
 class CustomFormField extends StatelessWidget {
- const CustomFormField({
+  CustomFormField({
     required this.width,
     required this.height,
     required this.hint,
@@ -18,8 +18,12 @@ class CustomFormField extends StatelessWidget {
     required this.obscuretext,
     this.suffix,
     this.maxLines,
+    this.controller,
+    this.enable,
     super.key,
   });
+  TextEditingController? controller;
+  bool? enable;
   final double width;
   final double height;
   final TextInputType keyboard;
@@ -34,13 +38,14 @@ class CustomFormField extends StatelessWidget {
   final InputBorder enabled;
   final bool obscuretext;
   final BoxConstraints? prefixConstraints;
-  final EdgeInsetsGeometry?contentpadding;
+  final EdgeInsetsGeometry? contentpadding;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
       height: height,
       child: TextFormField(
+        controller: controller,
         keyboardType: keyboard,
         textInputAction: inputAction,
         obscureText: obscuretext,
@@ -55,7 +60,7 @@ class CustomFormField extends StatelessWidget {
             fontWeight: FontWeight.w400,
             color: AppColors.grey200,
           ),
-          contentPadding:contentpadding,
+          contentPadding: contentpadding,
           prefixIconConstraints: prefixConstraints,
           prefixIcon: prefix,
           suffixIcon: suffix,
