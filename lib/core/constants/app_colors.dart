@@ -29,11 +29,14 @@ class AppColors {
   static const Color black = Color(0xff000000);
   static const Color main = Color(0xff010A1C);
   static const Color main10 = Color(0xff262626);
+  static const Color divider = Color(0xffD9D9D9);
+  static const Color red = Color(0xffD85A5A);
 
   //shadow colors
   static const Color shadowb = Color(0xffD9DDE5);
   static const Color shadowb1 = Color(0xffB0B0B0);
   static const Color shadow1 = Color(0xff9D6AE6);
   static const Color shadow2 = Color(0xff6133A2);
+  static const Color shadow4 = Color(0xff916CC5);
   static const Color shadow3 = Color(0xffD9BEFF);
 }

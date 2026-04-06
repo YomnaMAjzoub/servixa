@@ -24,9 +24,14 @@ class Home extends StatelessWidget {
             padding: const EdgeInsets.only(left: 15, top: 30, right: 15),
             child: ListView(
               children: [
-                CustomListTile(
-                  location: 'Riyadh – Malaz',
-                  name: 'Mhamad Alshame',
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(AppRouter.mainProfile);
+                  },
+                  child: CustomListTile(
+                    location: 'Riyadh – Malaz',
+                    name: 'Mhamad Alshame',
+                  ),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

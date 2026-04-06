@@ -1,15 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart'hide Trans;
+import 'package:get/get.dart' hide Trans;
 import 'package:servixass/common/widgets/gradient.dart';
 import 'package:servixass/common/widgets/search_field.dart';
 import 'package:servixass/core/constants/app_colors.dart';
 import 'package:servixass/core/routing/app_router.dart';
 import 'package:servixass/features/categories_sub/presentation/widgets/categories_grid.dart';
 
-class SubCategoryScreen extends StatelessWidget {
-  SubCategoryScreen({super.key});
+class CategoryScreen extends StatelessWidget {
+  CategoryScreen({super.key});
   final names = ['Equipment', 'Construction', 'Maintenance'];
   final icons = [
     'assets/icons/equipment.svg',
@@ -29,7 +29,7 @@ class SubCategoryScreen extends StatelessWidget {
             ),
             child: CustomScrollView(
               slivers: [
-                /// back button
+                
                 SliverToBoxAdapter(
                   child: Align(
                     alignment: AlignmentGeometry.topLeft,
@@ -48,7 +48,7 @@ class SubCategoryScreen extends StatelessWidget {
 
                 const SliverToBoxAdapter(child: SizedBox(height: 16)),
 
-                /// title
+                
                 SliverToBoxAdapter(
                   child: Row(
                     children: [
@@ -74,7 +74,7 @@ class SubCategoryScreen extends StatelessWidget {
 
                 const SliverToBoxAdapter(child: SizedBox(height: 24)),
 
-                /// search
+                
                 SliverToBoxAdapter(
                   child: SearchField(
                     hint: 'search'.tr(),
@@ -97,7 +97,7 @@ class SubCategoryScreen extends StatelessWidget {
 
                 const SliverToBoxAdapter(child: SizedBox(height: 24)),
 
-                /// categories grid
+                
                 CategoriesGrid(names: names, icons: icons),
               ],
             ),

@@ -72,15 +72,12 @@ class LocationSection extends StatelessWidget {
                 
                   Expanded(
                     child: ClipRRect(
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(18),
-                        topRight: Radius.circular(18),
-                      ),
-                      child: Image.network('https://i.pravatar.cc/150?img=2',fit: BoxFit.cover,filterQuality: FilterQuality.high,),
+                      borderRadius:  BorderRadius.only(topRight: Radius.circular(18),topLeft: Radius.circular(18)),
+                      child: Image.asset('assets/images/map.png',fit: BoxFit.cover,filterQuality: FilterQuality.high,),
                     ),
                   ),
 
-                  /// PROFILE INFO
+                 
                  
                     ListTile(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),

@@ -56,7 +56,7 @@ class _DescriptionSectionState extends State<DescriptionSection> {
 
           const SizedBox(height: 4),
 
-          /// More button
+         
           GestureDetector(
             onTap: () {
               setState(() {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:servixass/core/routing/app_router.dart';
 import 'custom_categories.dart';
 
 class CategoriesGrid extends StatelessWidget {
@@ -12,6 +14,9 @@ class CategoriesGrid extends StatelessWidget {
     return SliverGrid(
       delegate: SliverChildBuilderDelegate((context, index) {
         return CustomCategories(
+          onTap: () {
+            Get.toNamed(AppRouter.sub);
+          },
           name: names[index],
           image: icons[index],
         );

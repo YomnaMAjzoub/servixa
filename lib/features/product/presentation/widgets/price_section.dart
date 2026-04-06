@@ -16,7 +16,7 @@ class PriceSection extends StatelessWidget {
             spacing: 6,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              /// price + favorite
+             
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

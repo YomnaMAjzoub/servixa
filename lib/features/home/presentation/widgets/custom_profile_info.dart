@@ -10,7 +10,6 @@ class CustomListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-     
         children: [
          CircleAvatar(backgroundColor: AppColors.white,radius:30,),
           Expanded(

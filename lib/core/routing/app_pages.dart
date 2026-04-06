@@ -4,10 +4,13 @@ import 'package:servixass/features/auth/presentation/login_screen.dart';
 import 'package:servixass/features/auth/presentation/otp_screen.dart';
 import 'package:servixass/features/auth/presentation/register_screen.dart';
 import 'package:servixass/features/categories_sub/presentation/screens/categories_screen.dart';
+import 'package:servixass/features/categories_sub/presentation/screens/subcategories_screen.dart';
 import 'package:servixass/features/home/presentation/screens/home_screen.dart';
 import 'package:servixass/features/home/presentation/screens/items_screen.dart';
 import 'package:servixass/features/main/presentation/screens/main_screen.dart';
 import 'package:servixass/features/product/presentation/screens/details_screen.dart';
+import 'package:servixass/features/profile/presentation/screens/edit_profile_screen.dart';
+import 'package:servixass/features/profile/presentation/screens/profile_screen.dart';
 import 'package:servixass/features/search_filters/presentation/screens/search_screen.dart';
 import 'package:servixass/features/startup/presentation/screens/onboarding_screens.dart';
 import 'package:servixass/features/startup/presentation/screens/splash_screen.dart';
@@ -28,17 +31,13 @@ class AppPages {
 
     GetPage(name: AppRouter.product, page: () => DetailsScreen()),
 
-    GetPage(name: AppRouter.categor, page: () => SubCategoryScreen()),
+    GetPage(name: AppRouter.categor, page: () => CategoryScreen()),
 
     GetPage(name: AppRouter.sub, page: () => SubCategoryScreen()),
-    GetPage(
-      name: AppRouter.items,
-      page: () =>  ItemsScreen(),
-    ),
+    GetPage(name: AppRouter.items, page: () => ItemsScreen()),
 
-    GetPage(
-      name: AppRouter.search,
-      page: () =>  SearchScreen(),
-    ),
+    GetPage(name: AppRouter.search, page: () => SearchScreen()),
+    GetPage(name: AppRouter.mainProfile, page: () => ProfileScreen()),
+    GetPage(name: AppRouter.updateProfile, page:()=>UpdateProfileScreen()),
   ];
 }

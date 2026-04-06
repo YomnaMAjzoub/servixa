@@ -24,7 +24,7 @@ class ItemsScreen extends StatelessWidget {
             ),
             child: CustomScrollView(
               slivers: [
-                /// back button
+                
                 SliverToBoxAdapter(
                   child: Align(
                     alignment: AlignmentGeometry.topLeft,
@@ -43,7 +43,7 @@ class ItemsScreen extends StatelessWidget {
 
                 const SliverToBoxAdapter(child: SizedBox(height: 16)),
 
-                /// title
+                
                 SliverToBoxAdapter(
                   child:Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +70,7 @@ class ItemsScreen extends StatelessWidget {
 
                 const SliverToBoxAdapter(child: SizedBox(height: 24)),
 
-                /// search
+               
                 SliverToBoxAdapter(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

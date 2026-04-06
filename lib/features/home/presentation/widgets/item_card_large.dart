@@ -44,11 +44,11 @@ class ItemCard extends StatelessWidget {
           ],
         ),
 
-        /// ROW
+       
         child: Row(
           children: [
 
-            /// IMAGE
+           
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Image.asset(
@@ -62,13 +62,13 @@ class ItemCard extends StatelessWidget {
 
             const SizedBox(width: 16),
 
-            /// DETAILS
+            
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  /// TITLE
+                  
                   Text(
                     title,
                     maxLines: 1,
@@ -82,7 +82,7 @@ class ItemCard extends StatelessWidget {
 
                   const SizedBox(height:6),
 
-                  /// LOCATION
+                  
                   Row(
                     children: [
                       SvgPicture.asset(
@@ -111,7 +111,7 @@ class ItemCard extends StatelessWidget {
 
                   const SizedBox(height: 6),
 
-                  /// PRICE
+                  
                   SizedBox(
                     height: 24,
                     child: Row(
@@ -140,7 +140,7 @@ class ItemCard extends StatelessWidget {
               ),
             ),
 
-            /// FAVORITE
+           
             
           ],
         ),

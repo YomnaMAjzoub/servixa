@@ -56,14 +56,14 @@ class CustomItem extends StatelessWidget {
               ),
             ),
 
-            /// DETAILS
+           
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(4),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    /// TITLE
+                    
                     Text(
                       title,
                       maxLines: 1,
@@ -77,7 +77,7 @@ class CustomItem extends StatelessWidget {
 
                     // const SizedBox(height:4),
 
-                    /// LOCATION
+                    
                     Row(
                       children: [
                         SvgPicture.asset(

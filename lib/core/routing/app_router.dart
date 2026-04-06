@@ -11,4 +11,6 @@ class AppRouter {
   static const sub = '/sub';
   static const items = '/items';
   static const search = '/search';
+  static const mainProfile = '/main-profile';
+  static const updateProfile = '/update-profile';
 }

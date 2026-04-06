@@ -31,13 +31,13 @@ class SubCategoryScreen extends StatelessWidget {
             ),
             child: CustomScrollView(
               slivers: [
-                /// back button
+                
                 SliverToBoxAdapter(
                   child: Align(
                     alignment: AlignmentGeometry.topLeft,
                     child: IconButton(
                       onPressed: () {
-                        Get.off(AppRouter.categor);
+                        Get.offNamed(AppRouter.categor);
                       },
                       icon: const Icon(
                         Icons.arrow_back,
@@ -50,7 +50,7 @@ class SubCategoryScreen extends StatelessWidget {
 
                 const SliverToBoxAdapter(child: SizedBox(height: 16)),
 
-                /// title
+               
                 SliverToBoxAdapter(
                   child: Row(
                     children: [
@@ -76,7 +76,7 @@ class SubCategoryScreen extends StatelessWidget {
 
                 const SliverToBoxAdapter(child: SizedBox(height: 24)),
 
-                /// search
+                
                 SliverToBoxAdapter(
                   child: SearchField(
                     hint: 'search'.tr(),
