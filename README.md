@@ -54,6 +54,7 @@ This project is currently under development as part of my internship at **Tamkee
 <img src="assets/screenshots/onboarding.png" width="200">
 <img src="assets/screenshots/register.png" width="200">
 <img src="assets/screenshots/login.png" width="200">
+<img src="assets/screenshots/otp.png" width="200">
 <img src="assets/screenshots/home.png" width="200">
 <img src="assets/screenshots/details.png" width="200">
 <img src="assets/screenshots/profile.png" width="200">
@@ -67,4 +68,4 @@ This project is currently under development as part of my internship at **Tamkee
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YomnaAlMajzoub/real_estate_app.git
+[git clone https://github.com/YomnaMAjzoub/servixa.git
