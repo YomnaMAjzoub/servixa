@@ -1,16 +1,41 @@
-# servixass
+# Real Estate Services App
 
-A new Flutter project.
+A Flutter mobile application for browsing and managing real estate properties and services.  
+Built with Clean Architecture and GetX for state management.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Features
+- Browse available properties
+- View detailed property information
+- Favorites system for properties
+- Search and filter properties
+- Responsive UI design
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Technologies
+- Flutter & Dart
+- GetX (State Management)
+- Clean Architecture principles
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Screenshots
+<img src="assets/screenshots/onboarding.png" width="200">
+<img src="assets/screenshots/register.png" width="200">
+<img src="assets/screenshots/login.png" width="200">
+<img src="assets/screenshots/home.png" width="200">
+<img src="assets/screenshots/details.png" width="200">
+<img src="assets/screenshots/profile.png" width="200">
+<img src="assets/screenshots/update_profile.png" width="200">
+<img src="assets/screenshots/view_profile.png" width="200">
+
+
+---
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/YomnaAlMajzoub/real_estate_app.git
